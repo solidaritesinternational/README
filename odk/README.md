@@ -1,7 +1,5 @@
 # ODK
 
-How to setup an ODK Central server
-
 ## AWS Server
 
 Create instance with :
@@ -16,6 +14,7 @@ Create instance with :
 
 1. Install docker and docker-compose (see docker README)
 1. Disable firewall
+
    `sudo ufw disable`
 
 ## Install
@@ -57,7 +56,7 @@ docker-compose exec service odk-cmd --email im.techpm@solidarites-liban.org user
 docker-compose exec service odk-cmd --email im.techpm@solidarites-liban.org user-promote
 ```
 
-## For local server
+## For local offline server
 
 ### SSL Certificate
 
@@ -69,9 +68,11 @@ openssl req -x509 -new -nodes -key my_ca.key -sha256 -days 1825 -out my_ca.pem
 ```
 
 Create a private key pair for the web server
+
 `openssl genrsa -out odkcentral.key 2048`
 
 Generate a Certificate Signing Request (CSR)
+
 `openssl req -new -key odkcentral.key -out odkcentral.csr`
 
 Create a .ext configuration file for the server, with the following text
@@ -92,6 +93,7 @@ DNS.1 = odk.solis-demo.org
 ```
 
 Generate a server Certificate from the CSR + CA key pair
+
 `openssl x509 -req -in odkcentral.csr -CA my_ca.pem -CAkey my_ca.key -CAcreateserial -out odkcentral.crt -days 1825 -sha256 -extfile odkcentral.ext`
 
 Copy server certificate and server key
@@ -104,6 +106,7 @@ cp odkcentral.key <odk central path>/files/local/customssl/privkey.pem
 ### ODK Collect
 
 Get latest stable version of collect from GitHub
+
 `git clone https://github.com/getodk/collect`
 
 Download latest Android Studio : https://developer.android.com/studio/index.html

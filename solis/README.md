@@ -1,7 +1,5 @@
 # SOLIS
 
-How to connect to the SOLIS servers
-
 ## Introduction
 
 This document explains how to use the SOLIS application when working at the office or remotely.
@@ -35,7 +33,9 @@ Please follow the below steps:
 
 1. Download and install Git Bash for Windows from the following link : [https://gitforwindows.org/](https://gitforwindows.org/)
 2. Open Git Bash, and run the following command in the terminal to generate your **ssh private / public key pair** (replace the `name` by your first name, last name or windows login):
+
    `ssh-keygen -t ed25519 -C "name" -f $HOME/.ssh/name`
+
    You can provide a passphrase for your ssh key file, or leave it empty.
 
 This will create 2 files in the folder `C:\Users\user_name\.ssh\` (`user_name` is your windows login):
@@ -53,14 +53,23 @@ This will allow you to access the SOLIS application with a single command!
 When working from home, you will access the SOLIS application through a **ssh connection**. Please follow the below steps everytime you want to access the application:
 
 1. Open Git Bash and run one of the following commands in the terminal, depending on which server you want to connect to
+
    `ssh -N solis1`
+
    `ssh -N solis2`
+
    `ssh -N solis3`
+
    `ssh -N solis4`
+
    `ssh -N solis5`
+
    `ssh -N solis6`
+
    If you have provided a passphrase for your **ssh private key** in the initial setup, you will need to provide this passphrase.
+
 2. Open any web browser and access the SOLIS application with the following URL:
+
    `localhost:5000`
 
 And you will get redirected to the SOLIS login page.
