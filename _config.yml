@@ -1,2 +1,5 @@
 theme: jekyll-theme-minimal
+title: README
+description: A helpful documentation for web developers
 logo: logo.png
+include: [.env]
