@@ -8,38 +8,38 @@
 
 Download and install (**check the version required**):
 
-- Directly from the PHP website: https://www.php.net/downloads
-- From XAMPP (contains Apache + MariaDB + PHP + Perl): https://www.apachefriends.org/download.html
+- Directly from the PHP website: <https://www.php.net/downloads>
+- With XAMPP (contains Apache + MariaDB + PHP + Perl): <https://www.apachefriends.org/download.html>
 
 #### Composer (Package Manager)
 
-Download and install: https://getcomposer.org/download/
+Download and install: <https://getcomposer.org/download/>
 
 #### PostgreSQL (Database)
 
-Download and install: https://www.postgresql.org/download/
+Download and install: <https://www.postgresql.org/download/>
 
 #### Node (Package Manager)
 
-Download and install: https://nodejs.org/en/download/
+Download and install: <https://nodejs.org/en/download/>
 
 #### Git (Version Management)
 
-Download and install: https://git-scm.com/downloads
+Download and install: <https://git-scm.com/downloads>
 
 ### Optional (but recommended)
 
 #### Visual Studio Code (IDE)
 
-Download and install: https://code.visualstudio.com/download
+Download and install: <https://code.visualstudio.com/download>
 
 #### Git Extensions (Git Management)
 
-Download and install: https://github.com/gitextensions/gitextensions/releases/latest
+Download and install: <https://github.com/gitextensions/gitextensions/releases/latest>
 
 #### DBeaver (Database Administration)
 
-Download and install: https://dbeaver.io/download/
+Download and install: <https://dbeaver.io/download/>
 
 ## Run
 

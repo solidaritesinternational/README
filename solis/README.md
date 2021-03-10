@@ -31,7 +31,7 @@ In order to access the SOLIS application remotely, for security reasons, you nee
 To access the server remotely, you will need to connect to a relay server through a **ssh connection**, and for that, you will first need to generate a **ssh private / public key pair**.
 Please follow the below steps:
 
-1. Download and install Git Bash for Windows from the following link : [https://gitforwindows.org/](https://gitforwindows.org/)
+1. Download and install Git Bash for Windows from the following link : <https://gitforwindows.org/>
 2. Open Git Bash, and run the following command in the terminal to generate your **ssh private / public key pair** (replace the `name` by your first name, last name or windows login):
 
    `ssh-keygen -t ed25519 -C "name" -f $HOME/.ssh/name`

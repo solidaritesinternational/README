@@ -12,7 +12,7 @@ Create instance with :
 
 ## Prerequesites
 
-1. Install docker and docker-compose (see docker README)
+1. Install docker and docker-compose (see [docker](/README/docker))
 1. Disable firewall
 
    `sudo ufw disable`
@@ -109,7 +109,7 @@ Get the latest version of [ODK Collect](https://github.com/getodk/collect)
 
 `git clone https://github.com/getodk/collect`
 
-Download latest [Android Studio](https://developer.android.com/studio/index.html)
+Download and install [Android Studio](https://developer.android.com/studio/index.html)
 
 Add a network security configuration to Android Manifest:
 

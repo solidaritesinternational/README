@@ -2,7 +2,7 @@
 
 ## Prerequesites
 
-1. Install docker and docker-compose (see docker README)
+1. Install docker and docker-compose (see [docker](/README/docker))
 
 ## Install
 
@@ -19,4 +19,4 @@
 
 ## Documentation
 
-https://docs.sonarqube.org/latest/
+<https://docs.sonarqube.org/latest/>
