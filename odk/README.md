@@ -12,7 +12,7 @@ Create instance with :
 
 ## Prerequesites
 
-1. Install docker and docker-compose (see [docker](/README/docker))
+1. Install docker and docker-compose (see [docker](../docker))
 1. Disable firewall
 
    `sudo ufw disable`

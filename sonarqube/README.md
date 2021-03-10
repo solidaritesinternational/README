@@ -2,11 +2,11 @@
 
 ## Prerequesites
 
-1. Install docker and docker-compose (see [docker](/README/docker))
+1. Install docker and docker-compose (see [docker](../docker))
 
 ## Install
 
-1. Copy the provided docker-compose file
+1. Copy the provided [docker-compose file](docker-compose.yml))
 1. Start all containers
 
    `docker-compose up -d`
