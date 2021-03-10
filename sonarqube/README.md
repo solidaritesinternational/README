@@ -6,7 +6,7 @@
 
 ## Install
 
-1. Copy the provided [docker-compose file](docker-compose.yml))
+1. Copy the provided [docker-compose file](docker-compose.yml)
 1. Start all containers
 
    `docker-compose up -d`
