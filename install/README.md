@@ -1,6 +1,6 @@
 # INSTALL
 
-## Install
+## Install tools
 
 ### Mandatory
 
