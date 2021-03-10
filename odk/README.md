@@ -19,9 +19,9 @@ Create instance with :
 
 ## Install
 
-Documentation: https://docs.getodk.org/central-install-digital-ocean/#obtaining-and-setting-up-odk-central
+Documentation: <https://docs.getodk.org/central-install-digital-ocean/#obtaining-and-setting-up-odk-central>
 
-Clone ODK Central repository, update all submodules
+Get the latest version of [ODK Central](https://github.com/getodk/central), update all submodules
 
 ```
 git clone https://github.com/getodk/central
@@ -105,11 +105,11 @@ cp odkcentral.key <odk central path>/files/local/customssl/privkey.pem
 
 ### ODK Collect
 
-Get latest stable version of collect from GitHub
+Get the latest version of [ODK Collect](https://github.com/getodk/collect)
 
 `git clone https://github.com/getodk/collect`
 
-Download latest Android Studio : https://developer.android.com/studio/index.html
+Download latest [Android Studio](https://developer.android.com/studio/index.html)
 
 Add a network security configuration to Android Manifest:
 
