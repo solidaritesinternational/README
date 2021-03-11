@@ -1,8 +1,6 @@
 # INSTALL
 
-## Install tools
-
-### Mandatory
+## Mandatory
 
 #### PHP (Language)
 
@@ -27,7 +25,7 @@ Download and install: <https://nodejs.org/en/download/>
 
 Download and install: <https://git-scm.com/downloads>
 
-### Optional (but recommended)
+## Optional (but recommended)
 
 #### Visual Studio Code (IDE)
 
@@ -40,6 +38,12 @@ Download and install: <https://github.com/gitextensions/gitextensions/releases/l
 #### DBeaver (Database Administration)
 
 Download and install: <https://dbeaver.io/download/>
+
+#### Docker Desktop (Container Management)
+
+Download and install: <https://www.docker.com/products/docker-desktop>
+
+---
 
 ## Run
 
@@ -60,7 +64,7 @@ Download and install: <https://dbeaver.io/download/>
 
   `php artisan list`
 
-- Open php command line (for testing)
+- Open a php command line (for testing)
 
   `php artisan tinker`
 
@@ -71,6 +75,10 @@ Download and install: <https://dbeaver.io/download/>
 - Run database migrations and seeders
 
   `php artisan migrate:fresh --seed`
+
+- Add a new package
+
+  `composer require [package name]`
 
 ### Compile Javascript
 
@@ -85,3 +93,7 @@ Download and install: <https://dbeaver.io/download/>
   `npm run watch` (compiles after every code change)
 
   `npm run prod` (compiles for production)
+
+- Add a new package
+
+  `npm install [package name]`
