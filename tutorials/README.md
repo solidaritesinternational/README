@@ -25,3 +25,7 @@ Get started: <https://docs.docker.com/get-started/>
 ### Git
 
 Documentation: <https://git-scm.com/doc>
+
+### Markdown
+
+Basic syntax: <https://www.markdownguide.org/basic-syntax/>
