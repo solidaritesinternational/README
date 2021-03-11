@@ -10,3 +10,4 @@ This repository is to store all useful documentation and procedures about instal
 - [snipe-it](snipe-it): guide to setup a Snipe-IT server
 - [solis](solis): instructions on how to connect to a SOLIS server
 - [sonarqube](sonarqube): files, links and steps to setup a sonarqube server
+- [tutorials](tutorials): links to many interesting tutorials
