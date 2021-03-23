@@ -20,6 +20,9 @@ Currently, we have 6 SOLIS servers on the mission:
 
 When working at the office, and connected to the office Wifi, you can access the SOLIS application directly by typing in the **local IP address** of the server in any web browser.
 For example, if you are at the Miniyeh office, you can connect to **solis1** by opening any web browser and entering the URL **192.168.88.39**.
+
+![Connect from local IP](connect_to_solis_1.png "Connect from local IP")
+
 And you will get redirected to the SOLIS login page.
 
 ## Remotely
@@ -38,11 +41,15 @@ Please follow the below steps:
 
    You can provide a passphrase for your ssh key file, or leave it empty.
 
+   ![Generate a ssh key pair](connect_to_solis_2.png "Generate a ssh key pair")
+
 This will create 2 files in the folder `C:\Users\user_name\.ssh\` (`user_name` is your windows login):
 
 - _name_ : this is your **ssh private key**
 - _name.pub_ : this is your **ssh public key**
   (_name_ is the name you provided in the previous step)
+
+![Generated ssh key pairs](connect_to_solis_3.png "Generated ssh key pairs")
 
 Once you have succesfully generated these files, please contact the IM team and send them your **ssh public key** and the _name_ you chose, and we will provide remote access to the servers.
 We will send you a **ssh config file** named _config_, that you will need to add to the same folder (`C:\Users\user_name\.ssh\`). An example of this file is provided at the end of this document.
@@ -68,11 +75,15 @@ When working from home, you will access the SOLIS application through a **ssh co
 
    If you have provided a passphrase for your **ssh private key** in the initial setup, you will need to provide this passphrase.
 
+   ![Connect to the server](connect_to_solis_4.png "Connect to the server")
+
 2. Open any web browser and access the SOLIS application with the following URL:
 
    `localhost:5000`
 
-And you will get redirected to the SOLIS login page.
+   And you will get redirected to the SOLIS login page.
+
+   ![Connect to SOLIS](connect_to_solis_5.png "Connect to SOLIS")
 
 ## Configuration file
 
