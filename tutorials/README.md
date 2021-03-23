@@ -10,9 +10,13 @@ Laravel 8: <https://laracasts.com/series/whats-new-in-laravel-8>
 
 Inertia: <https://laracasts.com/series/learn-inertia-with-jeffrey>
 
-## Vue.js
+### Vue.js
 
 Vue basics: <https://laracasts.com/series/learn-vue-2-step-by-step>
+
+### Bootstrap
+
+Bootstrap 5.0 documentation: <https://getbootstrap.com/docs/5.0>
 
 ### NixOS
 
