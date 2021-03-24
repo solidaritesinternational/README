@@ -12,9 +12,9 @@ Currently, we have 6 SOLIS servers on the mission:
 | solis1      | Miniyeh  | 192.168.88.39    |
 | solis2      | Beirut   | 192.168.88.192   |
 | solis3      | Beirut   | 192.168.88.193   |
-| solis4      | Zahle    | 10.0.2.238       |
+| solis4      | Zahle    | 10.0.2.78        |
 | solis5      | Miniyeh  | 192.168.88.40    |
-| solis6      | Zahle    | 10.0.2.239       |
+| solis6      | Zahle    | 10.0.2.87        |
 
 ## At the office
 
