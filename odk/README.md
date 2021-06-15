@@ -29,23 +29,33 @@ cd central
 git submodule update -i
 ```
 
-Modify the .env file:
-
-- `letsencrypt` for online server
-- `customssl` for local server
+Modify the .env file
 
 ```
+mv .env.template .env
 nano .env
 
-SSL_TYPE=selfsign|letsencrypt|customssl
-DOMAIN=odk.solis-demo.org
+# Use fully qualified domain names. Set to DOMAIN=local if SSL_TYPE=selfsign.
+DOMAIN=your.domain.com
+
+# Used for Let's Encrypt expiration emails and Enketo technical support emails
 SYSADMIN_EMAIL=solis.admin@solidarites-liban.org
+
+# Options: letsencrypt, customssl, upstream, selfsign
+SSL_TYPE=letsencrypt
+
+# Do not change if using SSL_TYPE=letsencrypt
+HTTP_PORT=80
+HTTPS_PORT=443
 ```
+
+If you are using `customssl`, check the section below to create and add SSL certificate.
 
 Build docker images and start containers
 
 ```
 docker-compose build
+docker-compose up --no-start
 docker-compose up -d
 ```
 

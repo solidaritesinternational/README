@@ -13,11 +13,11 @@
     <![endif]-->
   </head>
   <body>
-      <header style="width: 30%">
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+      <header style="width: 30%; position: relative;">
+        <h1><a href="{{ "/" | absolute_url }}" style="word-wrap: inherit;">{{ site.title | default: site.github.repository_name }}</a></h1>
 
         {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
+          <img src="{{site.logo | relative_url}}" width="200px" height="200px" style="max-width: inherit;" alt="Logo" />
         {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
@@ -40,7 +40,7 @@
 
         {% include nav.html %}
       </header>
-      <section style="width: 65%">
+      <section style="width: 70%; float: left;">
 
       {{ content }}
 
