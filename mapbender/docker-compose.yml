@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+
+  mapbender:
+    image: yagajs/mapbender3
+    container_name: mapbender
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - mapbenderdata:/var/www/mapbender
+
+  geoserver:
+    image: oscarfonts/geoserver
+    container_name: geoserver
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - geoserverdata:/var/local/geoserver
+
+  postgis:
+    image: yagajs/postgis
+    container_name: postgis
+    restart: always
+    environment:
+      POSTGRES_DB: postgis
+      POSTGRES_USER: postgis
+      POSTGRES_PASSWORD: postgis
+    ports:
+      - 5432:5432
+    volumes:
+      - postgisdata:/var/lib/postgresql/data
+
+volumes:
+  mapbenderdata:
+  geoserverdata:
+  postgisdata:

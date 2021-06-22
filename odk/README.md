@@ -1,21 +1,8 @@
 # ODK
 
-## AWS Server
-
-Create instance with :
-
-- Ubuntu Server 16.04 LTS Amazon Machine Image (AMI)
-- t2.micro
-- Security group with ports open for SSH, HTTP and HTTPS
-- Fixed Elastic IP associated with the instance
-- known ssh key pair
-
 ## Prerequesites
 
-1. Install docker and docker-compose (see [docker](../docker))
-1. Disable firewall
-
-   `sudo ufw disable`
+Install docker and docker-compose (see [docker](../docker))
 
 ## Install
 
@@ -29,7 +16,7 @@ cd central
 git submodule update -i
 ```
 
-Modify the .env file
+Copy and edit the .env file
 
 ```
 mv .env.template .env
@@ -49,7 +36,109 @@ HTTP_PORT=80
 HTTPS_PORT=443
 ```
 
-If you are using `customssl`, check the section below to create and add SSL certificate.
+## For a local offline server
+
+Set the SSL_TYPE to `customssl`.
+
+### SSL Certificate
+
+Create a Certificate Authority (CA)
+
+```
+openssl genrsa -des3 -out odk_ca.key 2048
+openssl req -x509 -new -nodes -key odk_ca.key -sha256 -days 1825 -out odk_ca.pem
+```
+
+Create a private key pair for the web server
+
+`openssl genrsa -out odk.key 2048`
+
+Generate a Certificate Signing Request (CSR)
+
+`openssl req -new -key odk.key -out odk.csr`
+
+Create a .ext configuration file for the server, with the following text
+
+```
+nano odk.ext
+
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+IP.0 = 127.0.0.1
+IP.1 = 192.168.88.39
+IP.2 = 192.168.88.192
+IP.3 = 192.168.88.193
+IP.4 = 10.0.2.78
+IP.5 = 192.168.88.40
+IP.6 = 10.0.2.87
+DNS.0 = localhost
+DNS.1 = solis1.solis-demo.org
+DNS.2 = solis2.solis-demo.org
+DNS.3 = solis3.solis-demo.org
+DNS.4 = solis4.solis-demo.org
+DNS.5 = solis5.solis-demo.org
+DNS.6 = solis6.solis-demo.org
+```
+
+Generate a server Certificate from the CSR + CA key pair
+
+`openssl x509 -req -in odk.csr -CA odk_ca.pem -CAkey odk_ca.key -CAcreateserial -out odk.crt -days 1825 -sha256 -extfile odk.ext`
+
+Copy the server certificate and server key
+
+```
+cp odk.crt central/files/local/customssl/fullchain.pem
+cp odk.key central/files/local/customssl/privkey.pem
+```
+
+### Enketo
+
+Edit the enketo.dockerfile file to add the following option
+
+```
+nano enketo.dockerfile
+
+ENV NODE_TLS_REJECT_UNAUTHORIZED='0'
+```
+
+### ODK Collect
+
+Get the latest version of [ODK Collect](https://github.com/getodk/collect)
+
+`git clone https://github.com/getodk/collect`
+
+Download and install [Android Studio](https://developer.android.com/studio/index.html)
+
+- Copy the odk_ca.pem file to the collect_app/src/main/res/raw folder.
+
+- Edit the `network_security_config.xml` file in `collect_app/src/main/res/xml` to add our certificate authority as a trusted source
+
+  ```
+  <?xml version="1.0" encoding="utf-8"?>
+  <network-security-config>
+      <base-config cleartextTrafficPermitted="true">
+          <trust-anchors>
+              <!-- Explicitly trust Let's Encrypt ISRG Root X1 which is not available to Android < 7.1.1 -->
+              <certificates src="@raw/isrgrootx1"/>
+
+              <!-- Explicitly trust ODK CA -->
+              <certificates src="@raw/odk_ca"/>
+
+              <certificates src="system"/>
+          </trust-anchors>
+      </base-config>
+  </network-security-config>
+  ```
+
+- Build the APK as a signed release and install on devices.
+
+- For phones running Android 6 and older, you also need to manually install the odk_ca and odk certificates as trusted sources.
+
+## Start the system
 
 Build docker images and start containers
 
@@ -65,87 +154,3 @@ Create a new user and promote it to system administrator
 docker-compose exec service odk-cmd --email im.techpm@solidarites-liban.org user-create
 docker-compose exec service odk-cmd --email im.techpm@solidarites-liban.org user-promote
 ```
-
-## For local offline server
-
-### SSL Certificate
-
-Create a Certificate Authority (CA)
-
-```
-openssl genrsa -des3 -out my_ca.key 2048
-openssl req -x509 -new -nodes -key my_ca.key -sha256 -days 1825 -out my_ca.pem
-```
-
-Create a private key pair for the web server
-
-`openssl genrsa -out odkcentral.key 2048`
-
-Generate a Certificate Signing Request (CSR)
-
-`openssl req -new -key odkcentral.key -out odkcentral.csr`
-
-Create a .ext configuration file for the server, with the following text
-
-```
-nano odkcentral.ext
-
-authorityKeyIdentifier=keyid,issuer
-basicConstraints=CA:FALSE
-keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-subjectAltName = @alt_names
-
-[alt_names]
-IP.0 = 127.0.0.1
-IP.1 = 192.168.88.192
-DNS.0 = localhost
-DNS.1 = odk.solis-demo.org
-```
-
-Generate a server Certificate from the CSR + CA key pair
-
-`openssl x509 -req -in odkcentral.csr -CA my_ca.pem -CAkey my_ca.key -CAcreateserial -out odkcentral.crt -days 1825 -sha256 -extfile odkcentral.ext`
-
-Copy server certificate and server key
-
-```
-cp odkcentral.crt <odk central path>/files/local/customssl/fullchain.pem
-cp odkcentral.key <odk central path>/files/local/customssl/privkey.pem
-```
-
-### ODK Collect
-
-Get the latest version of [ODK Collect](https://github.com/getodk/collect)
-
-`git clone https://github.com/getodk/collect`
-
-Download and install [Android Studio](https://developer.android.com/studio/index.html)
-
-Add a network security configuration to Android Manifest:
-
-- add in `collect_app/src/main/AndroidManifest.xml`
-
-  ```
-    <application
-        android:name=".application.Collect"
-        [...]
-        android:networkSecurityConfig="@xml/network_security_config">
-  ```
-
-- create a `network_security_config.xml` file in `collect_app/src/main/res/xml`
-
-  ```
-  <?xml version="1.0" encoding="utf-8"?>
-  <network-security-config>
-      <base-config>
-          <trust-anchors>
-              <certificates src="@raw/my_ca"/>
-              <certificates src="system"/>
-          </trust-anchors>
-      </base-config>
-  </network-security-config>
-  ```
-
-- Paste the my_ca.pem file to a collect_app/src/main/res/raw folder.
-
-Build the APK in release and install on devices.
