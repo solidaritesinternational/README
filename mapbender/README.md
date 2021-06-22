@@ -28,5 +28,4 @@
 ## Documentation
 
 <https://mapbender.org/en/>
-
 <https://docs.geoserver.org/>

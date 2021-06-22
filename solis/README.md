@@ -18,12 +18,16 @@ Currently, we have 6 SOLIS servers on the mission:
 
 ## At the office
 
-When working at the office, and connected to the office Wifi, you can access the SOLIS application directly by typing in the **local IP address** of the server in any web browser.
-For example, if you are at the Miniyeh office, you can connect to **solis1** by opening any web browser and entering the URL **192.168.88.39**.
+When working at the office, and connected to the office Wifi, you can access the SOLIS application directly by typing in the **local IP address** of the server in any web browser, followed by **:8000**.
+For example, if you are at the Miniyeh office, you can connect to **solis1** by opening any web browser and entering the URL **192.168.88.39:8000**.
 
 ![Connect from local IP](connect_to_solis_1.png "Connect from local IP")
 
 And you will get redirected to the SOLIS login page.
+
+You can also access a demo version of the Solis 2 application by replacing the port **:8000** by **:8001**.
+
+![Connect from local IP](connect_to_solis_1_1.png "Connect from local IP")
 
 ## Remotely
 
@@ -79,15 +83,23 @@ When working from home, you will access the SOLIS application through a **ssh co
 
 2. Open any web browser and access the SOLIS application with the following URL:
 
-   `localhost:5000`
+   `localhost:5200`
 
    And you will get redirected to the SOLIS login page.
 
    ![Connect to SOLIS](connect_to_solis_5.png "Connect to SOLIS")
 
+3. You can also access a demo version of the Solis 2 application with the following URL:
+
+   `localhost:5400`
+
+   ![Connect to SOLIS](connect_to_solis_5_1.png "Connect to SOLIS")
+
 ## Configuration file
 
 Below is the **ssh config file**. The **$name** fields will be replaced by the name you provided in the initial setup.
+
+You can download the file with the following link: [config](config)
 
 ```
 Host *
@@ -101,40 +113,64 @@ Host solis1
     User $name
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5001
-    LocalForward 7000 localhost:7001
+    LocalForward 5100 localhost:5101
+    LocalForward 5200 localhost:5201
+    LocalForward 5300 localhost:5301
+    LocalForward 5400 localhost:5401
+    LocalForward 5500 localhost:5501
 
 Host solis2
     HostName relay0.solis-demo.org
     User $name
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5002
-    LocalForward 7000 localhost:7002
+    LocalForward 5100 localhost:5102
+    LocalForward 5200 localhost:5202
+    LocalForward 5300 localhost:5302
+    LocalForward 5400 localhost:5402
+    LocalForward 5500 localhost:5502
 
 Host solis3
     HostName relay0.solis-demo.org
     User $name
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5003
-    LocalForward 7000 localhost:7003
+    LocalForward 5100 localhost:5103
+    LocalForward 5200 localhost:5203
+    LocalForward 5300 localhost:5303
+    LocalForward 5400 localhost:5403
+    LocalForward 5500 localhost:5503
 
 Host solis4
     HostName relay0.solis-demo.org
     User $name
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5004
-    LocalForward 7000 localhost:7004
+    LocalForward 5100 localhost:5104
+    LocalForward 5200 localhost:5204
+    LocalForward 5300 localhost:5304
+    LocalForward 5400 localhost:5404
+    LocalForward 5500 localhost:5504
 
 Host solis5
     HostName relay0.solis-demo.org
     User $name
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5005
-    LocalForward 7000 localhost:7005
+    LocalForward 5100 localhost:5105
+    LocalForward 5200 localhost:5205
+    LocalForward 5300 localhost:5305
+    LocalForward 5400 localhost:5405
+    LocalForward 5500 localhost:5505
 
 Host solis6
     HostName relay0.solis-demo.org
     User $name
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5006
-    LocalForward 7000 localhost:7006
+    LocalForward 5100 localhost:5106
+    LocalForward 5200 localhost:5206
+    LocalForward 5300 localhost:5306
+    LocalForward 5400 localhost:5406
+    LocalForward 5500 localhost:5506
 ```

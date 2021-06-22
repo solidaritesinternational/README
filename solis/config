@@ -1,0 +1,71 @@
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ServerAliveInterval 240
+
+# Solis Servers
+Host solis1
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5001
+    LocalForward 5100 localhost:5101
+    LocalForward 5200 localhost:5201
+    LocalForward 5300 localhost:5301
+    LocalForward 5400 localhost:5401
+    LocalForward 5500 localhost:5501
+
+Host solis2
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5002
+    LocalForward 5100 localhost:5102
+    LocalForward 5200 localhost:5202
+    LocalForward 5300 localhost:5302
+    LocalForward 5400 localhost:5402
+    LocalForward 5500 localhost:5502
+
+Host solis3
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5003
+    LocalForward 5100 localhost:5103
+    LocalForward 5200 localhost:5203
+    LocalForward 5300 localhost:5303
+    LocalForward 5400 localhost:5403
+    LocalForward 5500 localhost:5503
+
+Host solis4
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5004
+    LocalForward 5100 localhost:5104
+    LocalForward 5200 localhost:5204
+    LocalForward 5300 localhost:5304
+    LocalForward 5400 localhost:5404
+    LocalForward 5500 localhost:5504
+
+Host solis5
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5005
+    LocalForward 5100 localhost:5105
+    LocalForward 5200 localhost:5205
+    LocalForward 5300 localhost:5305
+    LocalForward 5400 localhost:5405
+    LocalForward 5500 localhost:5505
+
+Host solis6
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5006
+    LocalForward 5100 localhost:5106
+    LocalForward 5200 localhost:5206
+    LocalForward 5300 localhost:5306
+    LocalForward 5400 localhost:5406
+    LocalForward 5500 localhost:5506

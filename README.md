@@ -6,6 +6,7 @@ This repository is to store all useful documentation and procedures about instal
 
 - [docker](docker): commands to install docker, and some useful commands to use with docker
 - [install](install): links and procedures to install all necessary dev tools
+- [mapbender](install): guide to setup Mapbender / Geoserver / Postgis
 - [odk](odk): instructions to setup an ODK central server instance
 - [snipe-it](snipe-it): guide to setup a Snipe-IT server
 - [solis](solis): instructions on how to connect to a SOLIS server
