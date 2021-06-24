@@ -1,0 +1,159 @@
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ServerAliveInterval 240
+
+# Solis Bot
+Host solisbot
+    Hostname www.solis-bot.fr
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+Host solisbottest
+    Hostname test.solis-bot.fr
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+Host solisbotdemo
+    Hostname demo.solis-bot.fr
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+
+
+# Snipe-IT
+Host snipeit
+    Hostname snipeit.solis-demo.org
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+
+
+# ODK
+Host odk
+    Hostname odk.solis-demo.org
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+
+
+# GeoServer
+Host geoserver
+    Hostname geoserver.solis-demo.org
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+
+
+# Nextcloud
+Host nextcloud
+    Hostname nextcloud.solis-demo.org
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+# Sonarqube
+Host sonarqube
+    Hostname sonarqube.solis-demo.org
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+
+
+# Solis
+Host solis
+    Hostname www.solis-demo.org
+    User ubuntu
+    IdentityFile ~/.ssh/solis_staging.pem
+    Port 22
+
+
+
+# Solis Relays
+Host solisrelay0
+    Hostname relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 22
+
+Host solisrelay1
+    Hostname relay1.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 22
+
+
+
+# Solis Servers
+Host solis1
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4001
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
+
+Host solis2
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4002
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
+
+Host solis3
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4003
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
+
+Host solis4
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4004
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
+
+Host solis5
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4005
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
+
+Host solis6
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4006
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
