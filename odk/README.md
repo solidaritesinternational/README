@@ -154,3 +154,8 @@ Create a new user and promote it to system administrator
 docker-compose exec service odk-cmd --email im.techpm@solidarites-liban.org user-create
 docker-compose exec service odk-cmd --email im.techpm@solidarites-liban.org user-promote
 ```
+
+## Documentation
+
+- central: <https://docs.getodk.org/central-intro/>
+- collect: <https://docs.getodk.org/collect-intro/>

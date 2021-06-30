@@ -8,9 +8,9 @@ To monitor our servers, we use the Blackbox Exporter module of Prometheus, to te
 
 The configuration of the prometheus service is at the server level and the relay level, and is handled in our NixOS configuration.
 
-## Graphana Dashboards
+## Grafana Dashboards
 
-The Graphana dashboards allow to view your Prometheus monitoring results in a user-friendly way, to help you know everything you want to know about your servers with a quick glance.
+The Grafana dashboards allow to view your Prometheus monitoring results in a user-friendly way, to help you know everything you want to know about your servers with a quick glance.
 
 Dashboards are configured with .json files, many of which are available, open source, and ready to use.
 The dashboards we use are the following:
@@ -18,13 +18,13 @@ The dashboards we use are the following:
 - the official Blackbox Exporter dashboard (<https://grafana.com/grafana/dashboards/7587>): [prometheus-blackbox-exporter_rev3.json](prometheus-blackbox-exporter_rev3.json)
 - A custom simplified version of the above dashboard, to view only the Http port status: [prometheus-blackbox-exporter_rev3_simplified.json](prometheus-blackbox-exporter_rev3_simplified.json)
 
-The Graphana web application, configured with these dashboards, is running on our relay servers, acessible on the port **3000**.
+The Grafana web application, configured with these dashboards, is running on our relay servers, acessible on the port **3000**.
 
 <http://relay0.solis-demo.org:3000/>
 <http://relay1.solis-demo.org:3000/>
 
 ## Documentation
 
-<https://prometheus.io/>
-<https://github.com/prometheus/blackbox_exporter>
-<https://grafana.com/>
+- prometheus: <https://prometheus.io/>
+- blackbox exporter: <https://github.com/prometheus/blackbox_exporter>
+- grafana: <https://grafana.com/>

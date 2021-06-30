@@ -27,5 +27,5 @@
 
 ## Documentation
 
-<https://mapbender.org/en/>
-<https://docs.geoserver.org/>
+- mapbender: <https://mapbender.org/en/>
+- geoserver: <https://docs.geoserver.org/>
