@@ -146,6 +146,7 @@ Host solis5
     LocalForward 5100 localhost:8080
     LocalForward 5200 localhost:8001
     LocalForward 5300 localhost:8081
+    LocalForward 5400 localhost:8002
 
 Host solis6
     HostName localhost
