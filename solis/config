@@ -38,6 +38,8 @@ Host solis5
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5005
     LocalForward 5200 localhost:5205
+    LocalForward 5400 localhost:5405
+    
 
 Host solis6
     HostName relay0.solis-demo.org
