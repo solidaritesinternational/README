@@ -13,3 +13,4 @@ This repository is to store all useful documentation and procedures about instal
 - [solis](solis): instructions on how to connect to a SOLIS server
 - [sonarqube](sonarqube): files, links and steps to setup a sonarqube server
 - [tutorials](tutorials): links to many interesting tutorials
+- [developers](developers): Solis Coding Practices
