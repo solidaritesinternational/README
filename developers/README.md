@@ -36,21 +36,25 @@ The objective is twofold. To be able to use automatic documentation generators a
 ### Variables
 
 > 👍 For example: $users = ..., $bannedUsers = ....
+
 > 🛑 Bad examples: $all_banned_users = ..., $Users=....
 
 ### Naming Models in Laravel
 
 > 👍 For example: `User` (`\App\User` or `\App\Models\User`, etc), `ForumThread`, `Comment`.
+
 > 🛑 Bad examples: Users, ForumPosts, blogpost, blog_post, Blog_posts.
 
 ### Model properties
 
 > 👍 For example: $this->updated_at, $this->title.
+
 > 🛑 Bad examples: $this->UpdatedAt, $this->blogTitle.
 
 ### Model Methods
 
 > 👍 For example: public function get(), public function getAll().
+
 > 🛑 Bad examples: public function GetPosts(), public function get_posts().
 
 
