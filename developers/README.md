@@ -31,6 +31,29 @@ In PHP, all functions should be commented as follows :
 
 The objective is twofold. To be able to use automatic documentation generators and to allow to maintain the code and to question its author if needed.
 
+## Naming convention
+
+### Variables
+
+> 👍 For example: $users = ..., $bannedUsers = ....
+> 🛑 Bad examples: $all_banned_users = ..., $Users=....
+
+### Naming Models in Laravel
+
+> 👍 For example: `User` (`\App\User` or `\App\Models\User`, etc), `ForumThread`, `Comment`.
+> 🛑 Bad examples: Users, ForumPosts, blogpost, blog_post, Blog_posts.
+
+### Model properties
+
+> 👍 For example: $this->updated_at, $this->title.
+> 🛑 Bad examples: $this->UpdatedAt, $this->blogTitle.
+
+### Model Methods
+
+> 👍 For example: public function get(), public function getAll().
+> 🛑 Bad examples: public function GetPosts(), public function get_posts().
+
+
 ## Tests
 
 For each new method, a unit test should be written.
