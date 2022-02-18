@@ -7,15 +7,15 @@
 - Solis referral > solis
 - Solis Bot > solbot2
 
-
 ## Database
 
-Every Solis app use PostgreSQL
+Every Solis app use PostgreSQL.
+
 Some systems may use multiple databases. (local and remote)
 
 ## Comments
 
-All functions should be commented as follows :
+In PHP, all functions should be commented as follows :
 
 ```php
 /**
@@ -36,11 +36,21 @@ The objective is twofold. To be able to use automatic documentation generators a
 For each new method, a unit test should be written.
 The goal is to have 100% test coverage
 
+
 ## Git
 
 Each new feature must be developed on a dedicated branch. When the feature is ready, create a Pull Request.
 
-## Versionning
+### Scopes Traceability
+
+In each repository, a file named SCOPES.md allows to follow the evolution of the project. For each new scope, fill in the date, the author and the list of tasks done. Consider this file as a changelog.
+
+### Issues
+
+If a bug is found, open an issue on github. If the bug is problematic during development, refer to your project manager.
+
+
+### Versionning
 
 When the master branch receives updates a new release with the version number must be created. The added or updated features should be detailed in the release description.
 
