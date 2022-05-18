@@ -40,10 +40,25 @@ Host solis5
     LocalForward 5200 localhost:5205
     LocalForward 5400 localhost:5405
     
-
 Host solis6
     HostName relay0.solis-demo.org
     User $name
     IdentityFile ~/.ssh/$name
     LocalForward 5000 localhost:5006
     LocalForward 5200 localhost:5206
+   
+Host solis7
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5007
+    LocalForward 5200 localhost:5207
+    LocalForward 5400 localhost:5407
+    
+Host solis8
+    HostName relay0.solis-demo.org
+    User $name
+    IdentityFile ~/.ssh/$name
+    LocalForward 5000 localhost:5008
+    LocalForward 5200 localhost:5208
+    LocalForward 5400 localhost:5408
