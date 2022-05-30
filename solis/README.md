@@ -13,8 +13,10 @@ Currently, we have 6 SOLIS servers on the mission:
 | solis2      | Beirut   | 192.168.88.192   |
 | solis3      | Beirut   | 192.168.88.193   |
 | solis4      | Zahle    | 10.0.2.78        |
-| solis5      | Miniyeh  | 192.168.88.40    |
+| solis5      | Tripoli  | 192.168.88.40    |
 | solis6      | Zahle    | 10.0.2.87        |
+| solis7      | Halba    | 192.168.1.144    |
+| solis8      | Halba    | 192.168.1.109    |
 
 ## At the office
 
@@ -84,6 +86,10 @@ When working from home, you will access the SOLIS application through a **ssh co
    `ssh -N solis5`
 
    `ssh -N solis6`
+   
+   `ssh -N solis7`
+   
+   `ssh -N solis8`
 
    If you have provided a passphrase for your **ssh private key** in the initial setup, you will need to provide this passphrase.
 
