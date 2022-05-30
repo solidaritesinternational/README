@@ -147,12 +147,37 @@ Host solis5
     LocalForward 5200 localhost:8001
     LocalForward 5300 localhost:8081
     LocalForward 5400 localhost:8002
+    LocalForward 5500 localhost:8082
 
 Host solis6
     HostName localhost
     User $name
     IdentityFile ~/.ssh/$name
     Port 4006
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
+  
+Host solis7
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4007
+    ProxyCommand ssh.exe -W %h:%p solisrelay0
+    LocalForward 5000 localhost:8000
+    LocalForward 5100 localhost:8080
+    LocalForward 5200 localhost:8001
+    LocalForward 5300 localhost:8081
+    LocalForward 5400 localhost:8002
+	LocalForward 5500 localhost:8082
+
+Host solis8
+    HostName localhost
+    User $name
+    IdentityFile ~/.ssh/$name
+    Port 4008
     ProxyCommand ssh.exe -W %h:%p solisrelay0
     LocalForward 5000 localhost:8000
     LocalForward 5100 localhost:8080
