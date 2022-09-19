@@ -122,3 +122,4 @@ For system administrators:
 - Open the file and rename all of the **$name** fields with the user name you have used previously.
 
 This file will allow you to connect to all of the servers and relays directly, as well as all of our cloud servers, if you have the proper ssh private key.
+You can find new tutorial for the [Servers manitenance.pdf](Servers manitenance)
